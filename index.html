@@ -1,0 +1,410 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polri</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #e7e7e7;
+            color: white;
+            padding: 10px 0;
+        }
+
+        header .container {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .hero {
+            background-color: #f4f4f4;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        .content {
+            padding: 20px 0;
+        }
+
+        .news-item {
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: #e7e7e7;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .ul1, .li1 {
+            display: flex;
+            padding: 30px;
+            width: 300px;
+            margin-left: 10%;
+            flex-wrap: wrap;
+        }
+
+        .gabung {
+            color: #797979;
+        }
+
+        .fitur {
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .fitur h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .fitur-items {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .fitur-item {
+            width: 30%;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .fitur-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .fitur-item h3 {
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+
+        .fitur-item p {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .banyak {
+            color: black;
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        .banyak ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: left;
+            padding-left: 40px;
+        }
+
+        .banyak li, .banyak h3 {
+            padding: 5px 0;
+        }
+
+        .banyak img {
+            height: 100px;
+        }
+
+        .p,h3{
+            text-align: justify;
+        }
+
+        .kotak1,.kotak2,.kotak3{
+            background-color: #ebebeb;
+        }
+
+        .baca{
+            color: orange;
+            font-size: large;
+            text-decoration: none;
+            padding-bottom: 20px;
+        }
+
+        :hover.baca{
+            font-size: 25px;
+        }
+
+        :hover.atas{
+            background-color: rgb(182, 181, 181);
+            border-radius: 99px;
+        }
+
+        .map-container {
+            width: 95%;
+            height: 400px; /* Sesuaikan tinggi peta */
+            margin: auto;
+        }
+
+        .a{
+            text-decoration: none;
+            color: black;
+        }
+
+        b{
+            padding-top: 20px;
+            padding-left: 10px;
+        }
+
+        /* Tambahkan CSS untuk navigasi responsif */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: black;
+            margin: 2px 0;
+        }
+
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            nav {
+                display: none;
+                width: 100%;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+                width: 100%;
+                text-align: left;
+                padding: 10px;
+                background-color: #e7e7e7;
+            }
+
+            .ul1 {
+                width: 100%;
+                margin-left: 0;
+                padding: 0;
+            }
+
+            .fitur-item {
+                width: 100%;
+            }
+
+            .banyak {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .banyak ul {
+                padding-left: 0;
+            }
+
+            .banyak img {
+                height: 80px;
+            }
+        }
+
+        nav.active {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container" id="beranda">
+            <h1><img src="../pwpb/image/polri.png" alt=""></h1>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav>
+                <ul>
+                    <li class="atas"><a href="#beranda">Beranda</a></li>
+                    <li class="atas"><a href="#layanan">Layanan</a></li>
+                    <li class="atas"><a href="#berita">Berita</a></li>
+                    <li class="atas"><a href="#lokasi">Lokasi</a></li>
+                    <li class="atas"><a href="#tentang">Tentang Kami</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <img id="poto" src="../pwpb/image/header-default.png" alt="" width="350px">
+                <h2>Selamat Datang di Polri</h2>
+                <p>Website Resmi Kepolisian Republik Indonesia</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="logo" id="layanan">
+                <h1 style="text-align: center;">Layanan</h1>
+                <ul class="ul1">
+                    <a href="https://penerimaan.polri.go.id/" class="a"><li class="li1"><img src="../pwpb/image/icon-penerimaanpolri.png" alt="" width="70px" height="70px" class="gabung"> <b>PENERIMAAN POLRI</b></li></a>
+                    <a href="https://skck.polri.go.id/" class="a"><li class="li1"><img src="../pwpb/image/icon-skck.png" alt="" width="70px" height="70px" class="gabung"> <b>SKCK ONLINE</b></li></a>
+                    <a href="https://korlantas.polri.go.id/category/sim-stnk-keliling/" class="a"><li class="li1"><img src="../pwpb/image/icon-sim2.png" alt="" width="70px" height="70px" class="gabung"><b>LOKASI SIM <br> KELILING</b></li></a>
+                    <a href="https://dumaspresisi.polri.go.id/" class="a"><li class="li1"><img src="../pwpb/image/icon-humas.png" alt="" width="70px" height="70px" class="gabung"><b>KELUHAN LAYANAN <br> POLRI</b></li></a>
+                </ul>
+            </div>
+        </section>
+
+        <section class="fitur" id="berita">
+     
+            <h1>Berita</h1>
+            <div class="fitur-items">
+                <div class="fitur-item">
+                    <div class="kotak1">
+                        <img src="../pwpb/image/110.jpeg" alt="">
+                        <h3>Call Center 110</h3>
+                        <p class="p">Masyarakat yang melakukan panggilan ke nomor akses 110 akan langsung terhubung ke agen yang akan memberikan layanan berupa informasi, pelaporan kecelakaan, bencana, kerusuhan, dan pengaduan (penghinaan, ancaman, tindak kekerasan, dll).</p>
+                        <br>
+                        <br>
+                        <a href="https://polri.go.id/110" class="baca">Selengkapnya ></a>
+                    </div>
+                </div>
+                <div class="fitur-item">
+                    <div class="kotak2">
+                        <img src="../pwpb/image/penerimaan.jpg" alt="">
+                        <h3>Rekrutmen Polri</h3>
+                        <p class="p">Untuk menjaring pendaftar, Polri melakukan berbagai sosialisasi terbuka, baik melalui online, media massa, spanduk, baliho maupun sosialisasi secara langsung ke masyarakat atau ke sekolah.</p>
+                        <br>
+                        
+                        <br>
+                        <a href="https://polri.go.id/rekrutmen" class="baca">Selengkapnya ></a>
+                    </div>
+                </div>
+                <div class="fitur-item">
+                    <div class="kotak3">
+                        <img src="../pwpb/image/presisi.jpg" alt="">
+                        <h3>Aplikasi Presisi Polri</h3>
+                        <p class="p">Polisi yang PRESISI hadir untuk seluruh lapisan masyarakat. Dengan memudahkan akses ke layanan dan informasi kepolisian, aplikasi PRESISI Polri membantu Polri lebih dekat dengan masyarakat.</p>
+                        <br>
+                        <br>
+                        <a href="https://polri.go.id/presisi" class="baca">Selengkapnya ></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="map-container" id="lokasi">
+            <h1>Lokasi Kami</h1>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.187264428357!2d106.80176549205909!3d-6.2387560618867095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c52a42c6d575%3A0x9ff4b03222753c3c!2sKantor%20Mabes%20Polri!5e0!3m2!1sid!2sid!4v1689000000000!5m2!1sid!2sid" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </section>
+
+        <footer>
+            <div class="container4">
+                <div class="banyak" id="tentang">
+                    <img src="../pwpb/image/logo-polri (1).png" alt="">
+                    <ul class="ul3">
+                        <h3>Tentang Polri</h3>
+                        <li>Pesan Kapolri</li>
+                        <li>Arti Lambang</li>
+                        <li>Sejarah</li>
+                        <li>Visi dan Misi</li>
+                        <li>Struktur Organisasi</li>
+                        <li>Satuan Kerja</li>
+                        <li>Satuan Wilayah</li>
+                        <li>Mitra Polri</li>
+                    </ul>
+
+                    <ul>
+                        <h3>Layanan Polri</h3>
+                        <li>SPKT</li>
+                        <li>SIM</li>
+                        <li>BPKB/STNK</li>
+                        <li>SKCK</li>
+                        <li>SP2HP</li>
+                        <li>Izin Keramaian</li>
+                        <li>Pengawalan Jalan</li>
+                        <li>Pengamanan Obyek Khusus</li>
+                    </ul>
+
+                    <ul>
+                        <h3>Fitur</h3>
+                        <li>Rekrutmen</li>
+                        <li>Pengadaan Barang/Jasa</li>
+                        <li>Pengaduan Masyarakat</li>
+                        <li>SKCK Online</li>
+                        <li>Hubungan Polri</li>
+                        <li>Call Center 110</li>
+                        <li>Aplikasi Presisi</li>
+                        <li>Kontak Resmi</li>
+                    </ul>
+                </div>
+                <p>&copy; 2024 Polri. Semua hak dilindungi.</p>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
